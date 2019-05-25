@@ -1,0 +1,30 @@
+body {
+	/*background-color: #c6b4ed;*/
+	background-image: url(image.jpg);
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+
+h1 {
+	text-align: center;
+	font-family: Times;
+}
+
+#letter {
+	border: 2px solid;
+	color: #5a418e;
+}
+
+#text {
+	color: #1a1030;
+	font-size: 25px;
+	font-weight: 600;
+	font-family: Times;
+}
+
+#butn {
+	color: #1a1030;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: Times;
+}

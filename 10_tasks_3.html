@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Интерактивное программирование</title>
+	</head>
+	<body>
+		<h1 id="heading">Привет, мир!</h1>
+						
+		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+		<script>
+			var leftUpOffset = 0, 
+			    topOffset = 0,
+			    clickNumber = 0,
+			    delay_interval = 50;
+			
+			function moveHeading () {
+				//двигаемся вправо
+				if (leftUpOffset < 200 && topOffset ===0) 
+				 {
+				$("h1").offset({ left: leftUpOffset});
+				leftUpOffset ++;
+				 }
+				 //двигаемся вниз
+				if (leftUpOffset === 200 && topOffset < 200) {
+				 $("h1").offset({ top: topOffset});
+				  topOffset ++;	
+				 }
+				//двигаемся влево
+				if (leftUpOffset <= 200 && leftUpOffset >=0 &&
+					topOffset === 200) 
+				{
+                $("h1").offset({ left: leftUpOffset});
+				leftUpOffset --;
+				}
+				//двигаемся вверх	
+				if (leftUpOffset === 0 && topOffset <=200) 
+				{
+                $("h1").offset({ top:topOffset});
+				topOffset --;
+				}
+			};
+			
+			var intervalId = setInterval (moveHeading, delay_interval);
+			
+			$("h1").click(function () {
+				clickNumber++;
+				$("h1").text ("Вы кликнули " + clickNumber + " раз!");
+				clearInterval (intervalId);
+				delay_interval = delay_interval-10;
+				
+				if (clickNumber > 10) 
+				   $("h1").text ("Вы победили!");
+				else 
+				   intervalId = setInterval (moveHeading, delay_interval);
+			});
+           
+        </script>
+	</body>
+	</html>

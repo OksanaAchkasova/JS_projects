@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Гонки</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	<script>
+	
+	var Car = function (x,y) {
+		this.x = x;
+		this.y = y;
+		this.draw()
+		//this.speed = 5
+	};
+
+	Car.prototype.draw = function () {
+		var carHtml = '<img src ="http://nostarch.com/images/car.png">';
+		this.carElement = $(carHtml);
+		this.carElement.css({
+			position: "absolute",
+			left: this.x,
+			top: this.y
+		});
+		$("body").append(this.carElement);
+	};	
+
+	Car.prototype.moveRight = function (speed) {
+		this.x +=speed;
+		this.carElement.css({
+			left: this.x,
+			top: this.y
+		});
+	};
+
+	Car.prototype.moveLeft = function (speed) {
+		this.x -=speed;
+		this.carElement.css({
+			left: this.x,
+			top: this.y
+		});
+	};
+
+	Car.prototype.moveUp = function (speed) {
+		this.y -=speed;
+		this.carElement.css({
+			left: this.x,
+			top: this.y
+		});
+	};
+
+	Car.prototype.moveDown = function (speed) {
+		this.y +=speed;
+		this.carElement.css({
+			left: this.x,
+			top: this.y
+		});
+	};
+
+	var tesla = new Car (20,20);
+	var nissan = new Car (100, 200);
+
+  	//С помощью setInterval и moveRight анимируйте nissan, чтобы машина //поехала от левой границы окна к правой
+	//var intervalId = setInterval (function() {nissan.moveRight()}, 20);
+
+    var intervalId = setInterval (function() {nissan.moveRight(Math.floor(Math.random()*5))}, 30);
+    var intervalIdtesla = setInterval (function() {tesla.moveRight(Math.floor(Math.random()*5))}, 30);
+
+	</script>
+</body>
+</html>

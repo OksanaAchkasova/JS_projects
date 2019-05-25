@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Прыгающий мяч</title>
+</head>
+<body>
+	<canvas id = "canvas" width= "500" height = "300"></canvas>
+	<script>
+
+		var canvas = document.getElementById ("canvas");
+		var ctx = canvas.getContext ("2d");
+		var width = canvas.width;
+		var height = canvas.height;
+	
+
+		function Ball () {
+			this.x = 100;
+			this.y = 100;
+			//получение случайного числа от max до min:
+			//Math.floor(Math.random()*(max - min +1)) + min
+			this.xSpeed = Math.floor(Math.random()*11)-5; //получение случайного числа от -5 до 5:
+			this.ySpeed = Math.floor(Math.random()*11)-5;
+			this.color = pickRandomColor ();
+		};
+
+		function circle (x, y, radius, fillCircle) {
+			ctx.beginPath();
+			ctx. arc (x,y, radius, 0, Math.PI * 2, false);
+			if (fillCircle) 
+				ctx.fill();
+			else ctx.stroke();
+		};
+
+		function pickRandomColor () {
+			var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
+			return colors [Math.floor(Math.random()*colors.length)];
+		};
+
+		Ball.prototype.draw = function () {
+			ctx.fillStyle = this.color; 
+			circle (this.x, this.y, 3, true)
+		};
+
+		Ball.prototype.move = function () {
+			this.x += this.xSpeed;
+			this.y += this.ySpeed;
+		};
+
+		Ball.prototype.checkCollision = function () {
+			if (this.x < 0 || this.x > width)
+				this.xSpeed = -this.xSpeed;
+			if (this.y < 0 || this.y > height)
+				this.ySpeed = -this.ySpeed;
+		};
+
+		var arrayBall = new Array();
+		for (var i=0; i<10; i++) {
+			arrayBall[i] = new Ball (); 
+		}
+	
+	
+		setInterval (function () {
+			ctx.clearRect(0, 0, width, height);
+		    for (var j=0; j < arrayBall.length; j++) {
+				arrayBall[j].draw ();
+				arrayBall[j].move ();
+				arrayBall[j].checkCollision ();
+				}
+			ctx.strokeRect (0,0, width, height);
+		}, 30);
+
+
+	</script>
+</body>
+</html>
