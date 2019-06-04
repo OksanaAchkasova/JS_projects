@@ -15,11 +15,19 @@ h1 {
 	color: #5a418e;
 }
 
-#text {
+#game_block {
 	color: #1a1030;
 	font-size: 25px;
 	font-weight: 600;
 	font-family: Times;
+	display: block;
+	margin: 5 px;
+	float: left;
+}
+
+#instruction_block {
+	float: center;
+	display: block;
 }
 
 #butn {
@@ -27,4 +35,13 @@ h1 {
 	font-size: 14px;
 	font-weight: 600;
 	font-family: Times;
+}
+
+#butn_start_again {
+	color: #1a1030;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: Times;
+	display: none;
+
 }
