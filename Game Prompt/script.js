@@ -26,10 +26,11 @@
     }
   
     var updateGameState = function (guess, word, answerArray) {
-    //Update answer array and return a number showing how many
-    //times the guess appears in the word
+    //Searches for an inputed letter (guess) in a hidden word.
+    //If this letter is in the hidden word, updates answer array.
+    //Return how many times the guess appears in the word
       var correct = 0;
-      for (var j = 0; j < word.length; j++) { //если ввел одну букву, ищем ее в загаданном слове. Если нашли, записываем в результат
+      for (var j = 0; j < word.length; j++) { 
         if (word[j] === guess.toLowerCase() && answerArray[j] == "_") {
                 answerArray[j] = guess.toLowerCase();
                 correct++;
@@ -84,7 +85,7 @@
 
     var drawWord = function () {
     //Draw the current word (answer array) underneath the stick man
-    // to show the player his progress
+    //to show the player his progress
         ctx.font = "20px Courier";
         ctx.fillStyle = "Black";
         ctx.textAlign = "left";
@@ -93,7 +94,7 @@
     };
 
     var drawLetter = function () {
-    //Draw the wrong letter crossed out
+    //Draw the wrong letter which is crossed out
         ctx.font = "24px Courier";
         ctx.fillStyle = "Black";
         ctx.textAlign = "right";
@@ -112,44 +113,42 @@
    //  });
 
     $("#butn").click(function (event) {
-    //If player input the wrong letter it will be drawn in canvas
         guess = $("#letter").val();
         drawWord();
-        if (guess.length !== 1) //если пользователь ввел больше, чем один символ
+        if (guess.length !== 1) //if player inputed more than one symbol
            alert("Пожалуйста, введите только одну букву");
         else {
                correctGuesses = updateGameState (guess, word, answerArray);
-               remainingLetters -= correctGuesses;
-               attempt++;
-               drawWord();
-                 if (correctGuesses == 0) {
+               remainingLetters -= correctGuesses; //reduce the number of remaining letters in a hidden word
+               attempt++; //increase attempts' counter
+               drawWord();  
+                 if (correctGuesses == 0) { //If player input the wrong letter it will be drawn in canvas
                    wrongGuesses++;
-                   drawLetter();
-                   drawHuman (wrongGuesses);
+                   drawLetter(); 
+                   drawHuman (wrongGuesses); 
                    shiftLetter+= 25;
                   }
              $("h3").html("Осталось " + (10-attempt) + " попыток");
              } 
 
-        $("#letter").val("");
-        $("#letter").focus();     
+        $("#letter").val(""); //clear value of the textbox  
+        $("#letter").focus(); //focus on the textbox    
 
-        if (remainingLetters > 0 && attempt == 10) {
+        if (remainingLetters > 0 && attempt == 10) { // If player has used all possible attempts
           $("h3").html("К сожалению, вы исчерпали все попытки");
           $("#butn").hide();
-          $("#butn_start_again").show();
+          $("#butn_start_again").show(); //Show the button which can update game from the start
         }
    
-        if (remainingLetters == 0) {
-           showAnswerAndCongratulate (answerArray);
-           $("#butn_start_again").show();
+        if (remainingLetters == 0) { //If player guessed the hidden word
+           showAnswerAndCongratulate (answerArray); //Show the answer and congratulate the player
+           $("#butn_start_again").show(); //Show the button which can update game from the start
            $("#butn").hide();
         }
     });
 
     $("#butn_start_again").click(function() {
-       location.reload();
-      // $("#butn_start_again").hide();
+       location.reload(); //update game page
     });
     
    
