@@ -1,0 +1,28 @@
+<DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Угадай слово</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+	<body>
+		<h1>Поиграем в игру "Угадай слово"</h1>
+        <div id="game_block"> Введите букву: <br>
+        <input type="text" id="letter">
+        <input type="button" id="butn" value="Ok"><br><br>
+        <h3></h3><br>
+     	<canvas id = "canvas" width= "600" height = "400"></canvas><br>
+     	<input type="button" id="butn_start_again" value="Начать сначала">
+        </div>
+        <div id="instruction_block">
+        	Игра "Угадай слово" (Hangman). В этой версии игры программа выбирает случайное слово и игрок угадывает буквы в этом слове. Каждый раз, когда игрок правильно угадывает букву, программа заполняет соответствующие пробелы в слове. Если же игрок не угадал букву, программа рисует часть тела человечка. 
+        	Для того, чтобы отгадать слово, игроку дается 10 попыток. 
+        	Если человечек будет полностью нарисован до того, как игрок угадает слово, игра завершится, а игрок проиграет. 
+        	После завершения игры на странице появится кнопка, позволяющая начать игру сначала. 
+         </div>
+     
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="script.js"></script>   
+	</body>
+	</html>
