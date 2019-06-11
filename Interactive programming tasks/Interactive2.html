@@ -2,10 +2,10 @@
 	<html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Интерактивное программирование</title>
+		<title>Interactive programming</title>
 	</head>
 	<body>
-		<h1 id="heading">Привет, мир!</h1>
+		<h1 id="heading">Hello world!</h1>
 						
 		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
@@ -16,25 +16,25 @@
 			    delay_interval = 50;
 			
 			function moveHeading () {
-				//двигаемся вправо
+				//move right
 				if (leftUpOffset < 200 && topOffset ===0) 
 				 {
 				$("h1").offset({ left: leftUpOffset});
 				leftUpOffset ++;
 				 }
-				 //двигаемся вниз
+				 //move down
 				if (leftUpOffset === 200 && topOffset < 200) {
 				 $("h1").offset({ top: topOffset});
 				  topOffset ++;	
 				 }
-				//двигаемся влево
+				//move left
 				if (leftUpOffset <= 200 && leftUpOffset >=0 &&
 					topOffset === 200) 
 				{
                 $("h1").offset({ left: leftUpOffset});
 				leftUpOffset --;
 				}
-				//двигаемся вверх	
+				//move up
 				if (leftUpOffset === 0 && topOffset <=200) 
 				{
                 $("h1").offset({ top:topOffset});
