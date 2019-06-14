@@ -11,12 +11,11 @@
 	var Car = function (x,y) {
 		this.x = x;
 		this.y = y;
-		this.draw()
-		//this.speed = 5
+		this.draw() //call to the draw method so that car objects automatically appear in the browser as soon as program creates them
 	};
 
 	Car.prototype.draw = function () {
-		var carHtml = '<img src ="http://nostarch.com/images/car.png">';
+		var carHtml = '<img src ="car.png">';
 		this.carElement = $(carHtml);
 		this.carElement.css({
 			position: "absolute",
@@ -61,9 +60,8 @@
 	var tesla = new Car (20,20);
 	var nissan = new Car (100, 200);
 
-  	//С помощью setInterval и moveRight анимируйте nissan, чтобы машина //поехала от левой границы окна к правой
-	//var intervalId = setInterval (function() {nissan.moveRight()}, 20);
-
+  	//Use setInterval and moveRight to move cars (nissan and tesla) to the right every 30 milliseconds by a different random distance between 0 and 5
+	
     var intervalId = setInterval (function() {nissan.moveRight(Math.floor(Math.random()*5))}, 30);
     var intervalIdtesla = setInterval (function() {tesla.moveRight(Math.floor(Math.random()*5))}, 30);
 
