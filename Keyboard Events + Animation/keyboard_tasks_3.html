@@ -21,6 +21,7 @@
 			else ctx. stroke();
 		}; 
 
+		//the Ball constructor
 		function Ball () {
 			this.x = width / 2;
 			this.y = height / 2;
@@ -30,6 +31,7 @@
 			this.xSpeed = this.speed;
 		};
 
+		//update the ball's position based on its speed
 		Ball.prototype.move = function () {
 			this.x += this.xSpeed;
 			this.y += this.ySpeed;
@@ -40,10 +42,12 @@
 				this.ySpeed = -this.ySpeed;
 		};
 
+		//draw the ball at its current position
 		Ball.prototype.draw = function () {
 			circle (this.x, this.y, this.radius, true);
 		};
 
+		//sets the ball's direction based on a string with key name
 		Ball.prototype.setDirection = function (direction) {
 			if (direction === "up") {
 				this.xSpeed = 0;
@@ -63,6 +67,7 @@
 			}
 		};
 
+        //sets the ball's speed based on a number in ballSpeed variable
 		Ball.prototype.setSpeed = function (ballSpeed) {
 			this.speed = ballSpeed;
 			if (this.xSpeed > 0) 
@@ -75,6 +80,7 @@
 				this.ySpeed = -ballSpeed;
 		};
 
+		//sets the ball's radius 
 		Ball.prototype.setRadius = function (ballRadius) {
 			if (ballRadius === "smaller" && this.radius > 1 ) 
 				this.radius--;
@@ -82,6 +88,7 @@
 				this.radius++;
 		};
 
+        //change the ball's speed in case the Z key and the X key pressing
 		Ball.prototype.setSpeedSF = function (ballSpeedSF) {
 			if (ballSpeedSF === "slowly") 
 			{
@@ -110,8 +117,10 @@
 			}
 		};
 
+		//create the ball object
 		var ball = new Ball ();
 
+		//an object to convert keycodes into key (action) names
 		var keyActions = {
 			32: "stop",
 			37: "left",
@@ -120,6 +129,7 @@
 			40: "down"
 		};
 
+        //an object to convert keycodes into speed number
 		var speeds = {
 			49: 1,
 			50: 2,
@@ -132,17 +142,20 @@
 			57: 9,
 		};
 
+		//an object to convert keycodes into the ball's size names
 		var keyRadius = {
 			67: "smaller", //C
 			86: "greater" //V
 		};
 
+		//an object to convert keycodes into the ball's speed names
 		var keySpeed = {
 			90: "slowly", //Z
 			88: "faster" //X
 		};
 
 
+		//the keydown handler that will be called for every keypress
 		$("body").keydown(function (event) {
 			var direction = keyActions[event.keyCode];
 			var ballSpeed = speeds[event.keyCode];
@@ -155,6 +168,7 @@
 			ball.setSpeedSF (ballSpeedSF);
 		});
 
+		//the animation function which called every 30 ms
 		setInterval(function () {
 			ctx.clearRect(0, 0, width, height);
 			ball.draw();

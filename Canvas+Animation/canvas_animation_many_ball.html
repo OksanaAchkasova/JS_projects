@@ -17,11 +17,11 @@
 		function Ball () {
 			this.x = 100;
 			this.y = 100;
-			//получение случайного числа от max до min:
+			//geting random number from max to min:
 			//Math.floor(Math.random()*(max - min +1)) + min
-			this.xSpeed = Math.floor(Math.random()*11)-5; //получение случайного числа от -5 до 5:
+			this.xSpeed = Math.floor(Math.random()*11)-5; //gets random number from -5 to 5
 			this.ySpeed = Math.floor(Math.random()*11)-5;
-			this.color = pickRandomColor ();
+			this.color = pickRandomColor (); //gibe each new ball a random color
 		};
 
 		function circle (x, y, radius, fillCircle) {
@@ -32,6 +32,7 @@
 			else ctx.stroke();
 		};
 
+		//function picks random color from the array 
 		function pickRandomColor () {
 			var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
 			return colors [Math.floor(Math.random()*colors.length)];

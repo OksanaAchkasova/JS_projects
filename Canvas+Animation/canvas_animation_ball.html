@@ -11,6 +11,7 @@
 		var canvas = document.getElementById ("canvas");
 		var ctx = canvas.getContext ("2d");
 
+		//the Ball constructor
 		function Ball () {
 			this.x = 100;
 			this.y = 100;
@@ -35,6 +36,8 @@
 			this.y += this.ySpeed;
 		};
 
+		//method checkCollision make the ball bouncing. 
+		//It checks to see if the ball has hit the wal
 		Ball.prototype.checkCollision = function () {
 			if (this.x < 0 || this.x > 200)
 				this.xSpeed = -this.xSpeed;
@@ -44,6 +47,7 @@
 
 		var ball = new Ball ();
 
+		//animating the ball
 		setInterval (function () {
 			ctx.clearRect(0, 0, 200, 200);
 			ball.draw ();
