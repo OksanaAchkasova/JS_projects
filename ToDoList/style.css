@@ -1,0 +1,32 @@
+#btn {
+ border:1px  solid #F97300;
+ background:#F97300;
+ color:#fff;
+}
+
+html {
+  font-size: 11px;
+}
+
+#addForm {
+	margin-top: 100px;
+}
+
+.h2 {
+	margin-bottom: 20px;
+}
+
+#selectedDate {
+	width: 77%;
+}
+
+.fa {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+table tr td:last-child {
+	width: 65px;
+}
+
+

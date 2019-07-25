@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>Список мероприятий</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+  <div class="form-group col-md-2 offset-md-8 ">
+    <select class="form-control" id="selectedDate">
+       <option >Дата</option>
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+    </select>
+  </div>
+
+ <div class="container">
+	  <div class="row">
+	  	<div class ="form-group col-md-4">
+		  <table class="table table-bordered" id="firstTable">
+			<thead class="thead-light">
+				<tr>
+					<th colspan="5" style="text-align:center">25.07.2019</th>
+				</tr>
+			</thead>
+	   <tr>
+        <td>Custom 1</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+       </tr>      
+       <tr>
+        <td>Custom 2</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+       </tr>
+       <tr>
+        <td>Custom 3</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+       </tr>
+       <tr>
+        <td>Custom 4</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+      <tr>
+        <td>Custom 5</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+      <tr>
+        <td>Custom 6</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+     
+       </tbody>
+	</table>
+	</div>
+
+	<div class ="form-group col-md-4">
+		<table class="table table-bordered" id="secondTable">
+			<thead class="thead-light">
+				<tr>
+					<th colspan="5" style="text-align:center">26.07.2019</th>
+				</tr>
+			</thead>
+	   <tr>
+        <td>Custom 1</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>      
+      <tr>
+        <td>Custom 2</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+       <tr>
+        <td>Custom 3</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+     <tr>
+        <td>Custom 4</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+       <tr>
+        <td>Custom 5</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+     <tr>
+        <td>Custom 6</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+     
+       </tbody>
+		</table>
+	 </div>
+
+	 <div class ="form-group col-md-4">
+		  <table class="table table-bordered" id="thirdTable">
+			<thead class="thead-light">
+				<tr>
+					<th colspan="5" style="text-align:center">27.07.2019</th>
+				</tr>
+			</thead>
+	   <tr>
+        <td>Custom 1</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>      
+      <tr>
+        <td>Custom 2</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+       <tr>
+        <td>Custom 3</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+     <tr>
+        <td>Custom 4</td>
+       <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+       <tr>
+        <td>Custom 5</td>
+       <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+     <tr>
+        <td>Custom 6</td>
+        <td></td>
+        <td>08:00</td>
+        <td>12:00</td>
+        <td><i class="fa fa-pencil fa-fw fa-border" onclick="editEvent()" ></i><i class="fa fa-trash-o fa-lg fa-border" onclick="delEvent(this)" ></i></td>
+      </tr>
+     
+       </tbody>
+		</table>
+	 </div>
+	  </div>
+	</div>
+
+
+ 	<div class="container" id="addForm">
+ 	  <p class="h2">Добавить мероприятие</p>
+	  <div class="row">
+    	<div class ="form-group col-md-4 bg-gradient-primary">
+    		<label for="eventName">Название</label>
+    		<input type="text" class="form-control" id="eventName">
+    	</div>
+    	<div class="form-group col-md-4">
+        	<label for="eventDate">Дата</label>
+     		<input type="date" class="form-control" id="eventDate">
+     	</div>
+       </div>
+     <div class="row">
+        <div class ="form-group col-md-4">
+ 			<label for="eventStartTime">Время начала</label>
+			<input type="time" class="form-control" id="eventStartTime"><br>
+    	</div>
+     	<div class="form-group col-md-4">
+     		<label for="eventEndTime">Время конца</label>
+ 			<input type="time" class="form-control" id="eventEndTime"><br>
+        </div>
+     </div>
+     <div class="row ">
+     	<div class="form-group col-md-3 offset-md-7">
+     		<button class="btn btn-outline-secondary btn-md" id="btn" onclick="addEvent()">ДОБАВИТЬ</button> 
+        </div>
+             
+    </div>
+
+
+</body>
+</html>
